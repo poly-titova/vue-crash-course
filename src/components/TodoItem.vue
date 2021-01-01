@@ -1,9 +1,10 @@
 <template>
   <li>
-    <span>
-      <input type="checkbox">
-        <strong>{{todo.id}}</strong>
-      {{todo.title}}
+    <span v-bind:class="{ done: todo.complited }">
+      <input type="checkbox" 
+             v-on:change="todo.complited = !todo.complited">
+      <strong>{{ todo.id }}</strong>
+      {{ todo.title }}
     </span>
     <button class="rm">&times;</button>
   </li>
